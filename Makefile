@@ -1,6 +1,6 @@
 # Copyright 2019 The Caicloud Authors.
 #
-# The ooooooooooooooold school Makefile, following are required targets. The Makefile is written
+# The old school Makefile, following are required targets. The Makefile is written
 # to allow building multiple binaries. You are free to add more targets or change
 # existing implementations, as long as the semantics are preserved.
 #
@@ -120,7 +120,7 @@ build-linux:
 	  -e GOPATH=/go                                                                    \
 	  -e GOFLAGS="$(GOFLAGS)"                                                          \
 	  -e SHELLOPTS="$(SHELLOPTS)"                                                      \
-	  $(BASE_REGISTRY)/golang:1.13.9-stretch                                           \
+	  $(BASE_REGISTRY)/golang:1.13-security                                            \
 	    /bin/bash -c 'for target in $(TARGETS); do                                     \
 	      go build -v -o $(OUTPUT_DIR)/$${target}                                      \
 	        -ldflags "-s -w -X $(ROOT)/pkg/version.VERSION=$(VERSION)                  \
